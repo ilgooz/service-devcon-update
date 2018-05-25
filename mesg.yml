@@ -4,4 +4,4 @@ events:
     data: {}
 dependencies:
   app:
-    image: mesg/devcon
+    image: mesg/ethereum-devcon
