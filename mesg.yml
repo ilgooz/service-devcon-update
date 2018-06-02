@@ -2,6 +2,3 @@ name: "Ethereum DevCon"
 events:
   update:
     data: {}
-dependencies:
-  app:
-    image: mesg/ethereum-devcon
