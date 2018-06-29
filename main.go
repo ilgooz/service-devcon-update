@@ -10,7 +10,6 @@ import (
 	"time"
 
 	api "github.com/mesg-foundation/core/api/service"
-	"github.com/mesg-foundation/core/service"
 	"google.golang.org/grpc"
 )
 
@@ -54,8 +53,6 @@ func isFileUpdatedAndUpdateMap(endpoint string) (updated bool) {
 func main() {
 	var err error
 	ctx := context.Background()
-	service, err := service.ImportFromPath("./")
-	handleError(err)
 
 	connection, err := grpc.Dial(os.Getenv("MESG_ENDPOINT"), grpc.WithInsecure())
 	handleError(err)
@@ -68,8 +65,8 @@ func main() {
 		if indexUpdated || jsUpdated || cssUpdated {
 			log.Println("update")
 			_, err := mesg.EmitEvent(ctx, &api.EmitEventRequest{
+				Token:     os.Getenv("MESG_TOKEN"),
 				EventKey:  "update",
-				Service:   service,
 				EventData: "{}",
 			})
 			handleError(err)

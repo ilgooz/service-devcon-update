@@ -1,4 +1,6 @@
 name: "Ethereum DevCon"
+description: "Notify you when the Devcon website has an update"
 events:
   update:
+    description: "Event emitted when the https://devcon.ethereum.org website is updated"
     data: {}
