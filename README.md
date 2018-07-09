@@ -1,6 +1,6 @@
 # Ethereum DevCon
 
-Notify you when the Devcon website has an update
+Receive a notification when the Devcon website is updated.
 
 ```bash
 mesg-core service deploy https://github.com/mesg-foundation/service-devcon-update.git
